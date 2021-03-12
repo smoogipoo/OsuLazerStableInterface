@@ -1,7 +1,6 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-// using System;
 using System.Diagnostics;
 using Common;
 using Newtonsoft.Json;
@@ -15,17 +14,11 @@ namespace StableLazerAPI
 
         private TRes post<TRes>(string target, params object[] args)
         {
-            // var json = JsonConvert.SerializeObject(new LazerMessage(target, args));
-            // json = json.Replace("\\", "\\\\");
-            // json = json.Replace("\"", "\\\"");
-            // json = $"{json}";
-
             var proc = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = "LazerRunner.exe",
-                    // Arguments = json,
                     UseShellExecute = false,
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
